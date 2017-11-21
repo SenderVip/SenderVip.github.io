@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="Sender">
 <meta property="og:description" content="解释器模式定义给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示解释语言 中的句子 这里的文法，简单点说就是语法规则 UML Exmple1234567891011121314151617181920212223242526272829303132333435//上下文，包含解释器之外的一些全局信息 pubic class Contenxt &amp;#123; &amp;#125;//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/07/05/design_mode/interpreter/interpreter/5.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/05/design_mode/interpreter/5.png">
 <meta property="og:updated_time" content="2017-08-07T05:41:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解释器模式">
 <meta name="twitter:description" content="解释器模式定义给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示解释语言 中的句子 这里的文法，简单点说就是语法规则 UML Exmple1234567891011121314151617181920212223242526272829303132333435//上下文，包含解释器之外的一些全局信息 pubic class Contenxt &amp;#123; &amp;#125;//">
-<meta name="twitter:image" content="http://yoursite.com/2017/07/05/design_mode/interpreter/interpreter/5.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/05/design_mode/interpreter/5.png">
 
 
 
@@ -370,7 +370,7 @@
         <h1 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><pre><code>给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示解释语言
 中的句子
 这里的文法，简单点说就是语法规则
-</code></pre><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p><img src="interpreter/5.png" alt="解释器模式UML"></p>
+</code></pre><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p><img src="/2017/07/05/design_mode/interpreter/5.png" alt="解释器模式UML"></p>
 <h2 id="Exmple"><a href="#Exmple" class="headerlink" title="Exmple"></a>Exmple</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//上下文，包含解释器之外的一些全局信息</span></span><br><span class="line"> pubic <span class="class"><span class="keyword">class</span> <span class="title">Contenxt</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象表达式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbstractExpression</span> </span>&#123;</span><br><span class="line">  <span class="comment">//解释操作接口，传入上下文对象(包含各个解释器需要的数据或是公共功能)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Contenxt ctx)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//终结符表达式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TerminalExpression</span> <span class="keyword">implements</span> <span class="title">AbstractExpression</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Contenxt ctx)</span></span>&#123;</span><br><span class="line">    <span class="comment">//实现与语法规则中终结符相关的解释操作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//非终结符表达式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonTerminalExpression</span> <span class="keyword">implements</span> <span class="title">AbstractExpression</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interpret</span><span class="params">(Contenxt ctx)</span></span>&#123;</span><br><span class="line">    <span class="comment">//实现与语法规则中非终结符相关的解释操作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用解释器的客户</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</span><br><span class="line">  <span class="comment">//主要按照语法规则对待特定的句子构建抽象语法树</span></span><br><span class="line">  <span class="comment">//然后调用解释操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>要使用解释器模式最重要的是定义一套语法规则(文法)</p>
 
@@ -415,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/05/design_mode/decorator/" rel="next" title="装饰模式">
-                <i class="fa fa-chevron-left"></i> 装饰模式
+              <a href="/2017/07/05/design_mode/memento_mode/" rel="next" title="备忘录模式">
+                <i class="fa fa-chevron-left"></i> 备忘录模式
               </a>
             
           </div>
